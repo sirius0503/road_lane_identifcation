@@ -1,0 +1,5 @@
+# Ignore mp4 files
+*.mp4
+
+# Ignore the video files directory
+video_files/
