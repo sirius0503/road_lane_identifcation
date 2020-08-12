@@ -16,13 +16,28 @@ import os
 import argparse
 
 
-def capture_media(media_path):
+def canny_edge_detector(image):
+
+    # Convert the image color to grayscale
+    gray_image = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
+
+    # Reduce noise from the image
+    blur = cv2.GaussianBlur(gray_image, (5, 5), 0)
+    canny = cv2.Canny(blur, 50, 150)
+    return canny
+
+
+def main(media_path, video=False):
+    # get the frames from the media
     cap = cv2.VideoCapture(media_path)
     while(cap.isOpened()):
         _, frame = cap.read()
+        canny_image = canny_edge_detector(frame)
         cv2.imshow("myframe", frame)
-        cv2.waitKey(0)
-        cv2.destroyAllWindows()
+
+        if cv2.waitKey(1) & 0xFF == ord('q'):
+            break
+        # cv2.destroyAllWindows()
         """
         canny_edge_detector
         Region of Interest - 3 different types based on line slopes
@@ -30,11 +45,13 @@ def capture_media(media_path):
         Display line images
         Weighted addition to original frames
         """
+    # close the video file
+    cap.release()
+
+    # destroy all the windows that is currently on
+    cv2.destroyAllWindows()
+
     return 0
-
-
-def main(media_path, video=False):
-    pass
 
 
 if __name__ == "__main__":
