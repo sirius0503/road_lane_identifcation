@@ -1,0 +1,8 @@
+https://trac.ffmpeg.org/wiki/Seeking -- for demo_image.jpeg 
+https://www.learnopencv.com/how-to-find-frame-rate-or-frames-per-second-fps-in-opencv-python-cpp/ - getting the fps of our video file
+Real time road lane detection - https://www.geeksforgeeks.org/opencv-real-time-road-lane-detection/
+Canny Edge Detection - https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_canny/py_canny.html
+Road detection youtube - https://www.youtube.com/watch?v=G0cHyaP9HaQ
+Medium Article - https://medium.com/@galen.ballew/opencv-lanedetection-419361364fc0
+
+Stackoverflow and other links
